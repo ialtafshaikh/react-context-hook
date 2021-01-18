@@ -1,5 +1,5 @@
 import React from "react";
-import { userContext } from "../App";
+import { userContext, channelContext } from "../App";
 
 // consuming the context
 
@@ -8,7 +8,17 @@ export default function ComponentF() {
     <div>
       <userContext.Consumer>
         {(user) => {
-          return <div>User from Context {user}</div>;
+          return (
+            <channelContext.Consumer>
+              {(channel) => {
+                return (
+                  <div>
+                    Multiple Context Value: {user} - {channel}{" "}
+                  </div>
+                );
+              }}
+            </channelContext.Consumer>
+          );
         }}
       </userContext.Consumer>
     </div>

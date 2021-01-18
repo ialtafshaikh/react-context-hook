@@ -4,6 +4,7 @@ import ComponentC from "./components/ComponentC";
 
 // firstly, create a hook
 export const userContext = createContext();
+export const channelContext = createContext();
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
         <h1>Understanding React Hook - useContext</h1>
         {/* secondly provide a provider to the component */}
         <userContext.Provider value={"Altaf Shaikh"}>
-          <ComponentC />
+          <channelContext.Provider value={"TeachMeBro"}>
+            <ComponentC />
+          </channelContext.Provider>
         </userContext.Provider>
       </header>
     </div>
