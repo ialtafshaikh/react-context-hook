@@ -11,7 +11,7 @@ function App() {
       <header className="App-header">
         <h1>Understanding React Hook - useContext</h1>
         {/* secondly provide a provider to the component */}
-        <userContext.Provider>
+        <userContext.Provider value={"Altaf Shaikh"}>
           <ComponentC />
         </userContext.Provider>
       </header>
